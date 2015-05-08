@@ -1,0 +1,26 @@
+sum=0
+n=0
+
+echo "Enter a number or zero to stop"
+read x
+while ((x != 0))	# or we can write: while [ $x -ne 0 ]
+do
+  sum=$((sum + x))
+  echo "Enter a number or zero to stop"
+  read x
+  
+  n=$((n + 1))
+  
+  if ((x==0))
+  then
+	sum=$((sum/n))
+  fi
+	
+done
+
+if ((sum==0))
+  then
+	echo "You cannot divide by zero"
+  else
+	echo "The average of the sum of the numbers is: $sum"
+fi
